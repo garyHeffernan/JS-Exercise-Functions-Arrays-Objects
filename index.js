@@ -2,11 +2,11 @@
 
 /**
  * ### Challenge `addNumbers`
- * 
+ *
  * @instructions
  * This function should be able to take two numbers as arguments
  * and return the result of adding them together.
- * 
+ *
  * For example, if we invoke `addNumbers` passing 5 and 3,
  * the returned value should be 8.
  *
@@ -25,11 +25,11 @@ function addNumbers(num1, num2) {
 
 /**
  * ### Challenge `makePersonObject`
- * 
+ *
  * @instructions
  * This function should take an id, a name and an email as arguments,
  * and return an object with `id`, `name` and `email` properties.
- * 
+ *
  * For example, if we invoke `makePersonObject`
  * passing 5, 'Leia' and 'leia@leia.com' as arguments,
  * the returned value should look like:
@@ -39,30 +39,29 @@ function addNumbers(num1, num2) {
  *   email: "leia@leia.com",
  * }
 */
-function makePersonObject(/* code here */) {
-  /* code here */
+function makePersonObject(x, y, z) {
+  return {id: x, name: y, email: z};
 }
-
 /**
  * ### Challenge `getName`
- * 
+ *
  * @instructions
  * This function takes as its only argument
  * an object containing a `name` property,
  * and return a string that reads `Hello, my name is {name}`,
  * where `{name}` is the name stored in the object.
- * 
+ *
  * For example, if we invoke `getName`
  * passing { id: 1, name: 'Leia', email: 'leia@leia.com` } as the argument,
  * the returned value should look like `Hello, my name is Leia`.
 */
-function getName(/* code here */) {
-  /* code here */
+function getName(x) {
+  return `Hello my name is ${x.name}`;
 }
 
 /**
  * ### Challenge `makeSmartPerson`
- * 
+ *
  * @instructions
  * This function takes a single `name` argument and returns an object.
  * The returned object has the following characteristics:
@@ -73,13 +72,19 @@ function getName(/* code here */) {
  *         and returns a string like `Hello, my name is {name}`.
  *         where `{name}` is the name passed into `makeSmartPerson`.
 */
-function makeSmartPerson(/* code here */) {
-  /* code here */
+function makeSmartPerson(x) {
+  return {
+    name: x,
+
+    sum: function(num1, num2){
+      return num1 + num2;
+    },
+
+    speak: function() {
+      return `Hello, my name is ${x}.`
+    }
+  }
 }
-
-
-
-
 
 /*
 // ⭐️ Example Test Data ⭐️
@@ -104,10 +109,10 @@ var inventory = [
 */
 /**
   * ### Example Array Challenge:
-  * 
+  *
   * @instructions
   * get3rdCar() should return the string `The car is a Land Rover Defender Ice Edition`
-  * 
+  *
   *
   * NOTE: This example has been completed for you.
 **/
@@ -125,44 +130,45 @@ function get3rdCar(inventory) {
 
 /**
  * ### Challenge `getCarInfoByIndex`
- * 
+ *
  * @instructions
  * getCarInfoByIndex takes two arguments:
  *     (1) an array which is an inventory of cars like the preview above (see ⭐️ Preview Test Data ⭐️)
  *     (2) a number which is the desired index in the array.
  * getCarInfoByIndex returns a string in the format `This is a {car_make} {car_model}`
- * 
+ *
  * For example, if getCarInfoByIndex is invoked with the inventory and the number 0,
  * it will return `This is a Lincoln Navigator`.
 */
 function getCarInfoByIndex(inventory, index) {
-  /* code here */
+    return `This is a ${inventory[index].car_make} ${inventory[index].car_model}`
 }
 
 /**
  * ### Challenge `getLastCarInfo`
- * 
+ *
  * @instructions
  * getLastCarInfo takes a single argument:
  *     (1) an array which is an inventory of cars like the one inside /data/inventory.js.
  * getLastCarInfo returns a string in the format `This is a {car_make} {car_model}
- * 
+ *
  * For example, if getLastCarInfo is invoked passing the inventory inside /data/inventory.js,
  * it will return `This is a Lincoln Town Car`.
 */
-function getLastCarInfo(/* code here */) {
-  /* code here */
+function getLastCarInfo(arr) {
+  let last = arr.length - 1;
+  return `This is a ${arr[last].car_make} ${arr[last].car_model}.`
 }
 
 /**
  * ### Challenge `getCarInfoById`
- * 
+ *
  * @instructions
  * getCarInfoById takes two arguments:
  *     (1) an array which is an inventory of cars like the one inside /data/inventory.js.
  *     (2) a number which is the desired car id (see how each car has its own unique id).
  * getCarInfoById returns a string in the format `This is a {car_make} {car_model}
- * 
+ *
  * For example, if getCarInfoById is invoked with the inventory and the number 1,
  * it will return `This is a Lincoln Navigator`.
 */
@@ -172,7 +178,7 @@ function getCarInfoById(/* code here */) {
 
 /**
  * ### Challenge `sortCarInventory`
- * 
+ *
  * @instructions
  * sortCarInventory takes a single argument:
  *     (1) an array which is an inventory of cars like the one inside /data/inventory.js.
@@ -184,7 +190,7 @@ function sortCarInventory(/* code here */) {
 
 /**
  * ### Challenge `getModelYears`
- * 
+ *
  * @instructions
  * We need the years from every car in the inventory!
  * getModelYears takes a single argument:
@@ -197,7 +203,7 @@ function getModelYears(/* code here */) {
 
 /**
  * ### Challenge `getOlderCars`
- * 
+ *
  * @instructions
  * We need a utility to find older cars!
  * getOlderCars takes two arguments:
@@ -213,7 +219,7 @@ function getOlderCars(/* code here */) {
 
 /**
  * ### Challenge `getGermanCars`
- * 
+ *
  * @instructions
  * We need a utility to find German cars!
  * getGermanCars takes a single argument:
@@ -228,14 +234,14 @@ function getGermanCars(/* code here */) {
 
 /**
  * ### Challenge refactor to arrow functions
- * 
+ *
  * @instructions
  * Create arrow function versions of the following commented-out functions:
- * 
+ *
  * const sum = function (a, b) {
  *   return a + b
  * }
- * 
+ *
  * const addFive = function(num) {
 *    return num + 5
  * }
@@ -252,7 +258,7 @@ const argTimesTwo = null; // code here!
  * ### Challenge `carMaker`
  * THIS ONE IS A STRETCH GOAL. ATTEMPT IT ONLY AFTER
  * COMPLETING ALL NON-STRETCH CHALLENGES IN THE REPOSITORY!
- * 
+ *
  * @instructions
  * This function takes a single odometer argument (a number) and returns an object.
  * The returned object has the following characteristics:
