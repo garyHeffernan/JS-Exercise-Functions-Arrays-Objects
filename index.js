@@ -189,7 +189,7 @@ function getCarInfoById(arr, num) {
  * sortCarInventory returns an inventory that is sorted by car_model, ascending [A-Z].
 */
 function sortCarInventory(arr) {
-  return arr.sort((a,b) => (a.car_model > b.car_model) ? 1: -1);
+  return arr.sort((a,b) => (a.car_model > b.car_model) ? 1 : -1);
 }
 
 /**
@@ -244,14 +244,18 @@ function getOlderCars(arr, num) {
 */
 function getGermanCars(arr) {
   const germanCar = [];
-  const germanArr = ['Audi', 'Mercedes-Benz', 'Volkswagen', 'BMW']
   for (let i = 0; i < arr.length; i++) {
-    if (germanArr.includes(arr[i].car_make) == true) {
+    if (arr[i].car_make === 'Audi' ||
+        arr[i].car_make === 'Mercedes-Benz' ||
+        arr[i].car_make === 'Volkswagen' ||
+        arr[i].car_make === 'BMW') {
       germanCar.push(arr[i]);
     }
   }
 return germanCar;
 }
+
+
 
 /**
  * ### Challenge refactor to arrow functions
